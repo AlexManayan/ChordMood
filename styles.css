@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(35, 10, 222);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  select,
+  button {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #5bc8f7;
+    color: #fff;
+    cursor: pointer;
+    border-color: #5bc8f7;
+  }
+  
+  button:hover {
+    background-color: #3b9af3;
+    border-color: #3b9af3;
+  }
+  
+  #chord-progression {
+    margin-bottom: 20px;
+  }
+  
+  #chord-progression h2 {
+    margin-top: 0;
+  }
+  
+  #spotify-playlist {
+    margin-top: 20px;
+  }
+  
+  #spotify-playlist h2 {
+    margin-top: 0;
+  }
+  
+  #spotify-playlist .playlist {
+    margin-bottom: 10px;
+  }
+  
+  #spotify-playlist .playlist:last-child {
+    margin-bottom: 0;
+  }
+  
+  #spotify-playlist .playlist h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+    #playlist-container {
+      margin-top: 20px;
+    }
+    
+    .playlist {
+      display: flex;
+      align-items: center
+    }

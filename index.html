@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChordMood</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .App {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    select {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    button {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="App">
+    <h1>ChordMood</h1>
+    <label for="mood">Select a mood:</label>
+    <select id="mood">
+      <option value="">--Please choose a mood--</option>
+      <option value="happy">Happy</option>
+      <option value="sad">Sad</option>
+      <option value="romantic">Romantic</option>
+      <option value="energetic">Energetic</option>
+    </select>
+    <button onclick="generateChordProgression()">Generate Chord Progression</button>
+    <div id="chordProgression"></div>
+    <button onclick="getSpotifyPlaylist()">Get Spotify Playlist</button>
+    <div id="spotifyPlaylist"></div>
+  </div>
+  <script>
+    const moodSelect = document.getElementById('mood');
+    const chordProgressionDiv = document.getElementById('chordProgression');
+    const spotifyPlaylistDiv = document.getElementById('spotifyPlaylist');
+
+    function generateChordProgression() {
+      const mood = moodSelect.value;
+      if (!mood) {
+        alert('Please select a mood');
+        return;
+      }
+      fetch(`https://api.github.com/repos/yourusername/chord-progression-api/generate?mood=${mood}`)
+        .then((response) => response.json())
+        .then((data) => {
+          chordProgressionDiv.innerHTML = `<h2>Chord Progression:</h2><p>${data.chordProgression}</p>`;
+        })
+        .catch((error) => {
+          console.error('Error fetching chord progression:', error);
+        });
+    }
+
+    function getSpotifyPlaylist() {
+      const mood = moodSelect.value;
+      if (!mood) {
+        alert('Please select a mood');
+        return;
+      }
+      fetch(`https://api.spotify.com/v1/search?q=${mood}&type=playlist&market=US&limit=10`, {
+        headers: {
+          Authorization: 'Bearer YOUR_SPOTIFY_ACCESS_TOKEN',
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const playlists = data.playlists.items;
+          let playlistHtml = '<h2>Spotify Playlists:</h2>';
+          playlists.forEach((playlist) => {
+            playlistHtml += `
+              <div>
+                <h3>${playlist.name}</h3>
+                <p>${playlist.description}</p>
+              </div>
+            `;
+          });
+          spotifyPlaylistDiv.innerHTML = playlistHtml;
+        })
+        .catch((error) => {
+          console.error('Error fetching Spotify playlist:', error);
+        });
+    }
+  </script>
+</body>
+</html>
