@@ -1,9 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(35, 10, 222);
-    margin: 0;
-    padding: 0;
-  }
+  background: linear-gradient(45deg, #3b9af3, #3b9af3, #4CAF50);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+}
   
   .container {
     max-width: 800px;
