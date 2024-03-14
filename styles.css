@@ -1,79 +1,66 @@
 body {
-  background: linear-gradient(45deg, #3b9af3, #3b9af3, #4CAF50);
-  background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
-  
-  .container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    font-size: 36px;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  
-  select,
-  button {
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    background-color: #5bc8f7;
-    color: #fff;
-    cursor: pointer;
-    border-color: #5bc8f7;
-  }
-  
-  button:hover {
-    background-color: #3b9af3;
-    border-color: #3b9af3;
-  }
-  
-  #chord-progression {
-    margin-bottom: 20px;
-  }
-  
-  #chord-progression h2 {
-    margin-top: 0;
-  }
-  
-  #spotify-playlist {
-    margin-top: 20px;
-  }
-  
-  #spotify-playlist h2 {
-    margin-top: 0;
-  }
-  
-  #spotify-playlist .playlist {
-    margin-bottom: 10px;
-  }
-  
-  #spotify-playlist .playlist:last-child {
-    margin-bottom: 0;
-  }
-  
-  #spotify-playlist .playlist h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-    #playlist-container {
-      margin-top: 20px;
-    }
-    
-    .playlist {
-      display: flex;
-      align-items: center
-    }
+
+#app {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  color: #3498db;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Add more styling as needed */
